@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+<div class="card mt-5" style="width: 18rem">
+    <img src="{{ event.eventImage.url }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+        <h5 class="card-title">{{ event.title }}</h5>
+        <p class="card-text">{{ event.description }}</p>
+        <p class="card-text">{{ event.nbrParticipants }}</p>
+        <a href="{% url 'events_listC' %}" class="btn btn-dark">Go back</a>
+        <a href="{% url 'events_participate' event.id %}" class="btn btn-light">Participate</a>
+        <a href="{% url 'events_undoParticipate' event.id %}" class="btn btn-light">Undo Participation</a>
+        <a href="{% url 'events_update' event.id %}" class="btn btn-light">Update</a>
+        <!-- <a href="{% url 'events_UpdateC' event.id %}" class="btn btn-light">Update</a> -->
+        <a href="{% url 'event_delete' event.id %}" class="btn btn-danger">Delete</a>
+        <!-- <a href="{% url 'event_deleteTwoC' event.id %}" class="btn btn-danger">Delete2</a> -->
+    </div>
+</div>
+{% endblock content %}

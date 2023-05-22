@@ -1,0 +1,9 @@
+
+{% extends "base.html" %}{% block content %}{% load crispy_forms_tags%}
+    <form method="POST" class="mt-5">
+        <!-- Security token by Django -->
+        Are you want to delete "{{ object }}" ?<br>
+        <input type="submit" value="Confirm" class="btn btn-danger" />
+        <a href="{% url 'events_list' %}" class="btn btn-light">Cancel </a>
+    </form>
+    {% endblock %}
